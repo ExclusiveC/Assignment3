@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  <h1>Blogs</h1>
+  <ul>
+    <% blogPosts.forEach(function(post) { %>
+      <li>
+        <h2><%= post.title %></h2>
+        <p><%= post.content.substring(0, 100) %></p>
+        <p><strong>Created at:</strong> <%= post.createdAt.toISOString() %></p>
+        <a href="/post/<%= post.id %>">Read More</a>
+      </li>
+    <% }); %>
+  </ul>
+  <a href="/new-post">Add New Blog Post</a>
+</body>
+</html>
